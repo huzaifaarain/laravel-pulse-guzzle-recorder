@@ -1,4 +1,6 @@
-# Pulse Guzzle Recorder provide a custom recorder for intercepting http requests made via guzzlehttp/guzzle php library. The package uses the on_stats request option for extracting the request/response data. The recorder intercept and log the request into the Laravel Pulse Slow Outgoing Requests.
+# Laravel Pulse Guzzle Recorder
+
+Laravel Pulse Guzzle Recorder provide a custom recorder for intercepting http requests made via guzzlehttp/guzzle php library and log them into the Laravel Pulse Slow Outgoing Requests section.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/huzaifaarain/laravel-pulse-guzzle-recorder.svg?style=flat-square)](https://packagist.org/packages/huzaifaarain/laravel-pulse-guzzle-recorder)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/huzaifaarain/laravel-pulse-guzzle-recorder/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/huzaifaarain/laravel-pulse-guzzle-recorder/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -20,40 +22,18 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require huzaifaarain/laravel-pulse-guzzle-recorder
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-pulse-guzzle-recorder-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-pulse-guzzle-recorder-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-pulse-guzzle-recorder-views"
+composer require muhammadhuzaifa/laravel-pulse-guzzle-recorder
 ```
 
 ## Usage
 
+If you are using Laravel builtin Http facade, then you don't need this package. This package is useful when working with `guzzlehttp/guzzle` using the `Client` class. The `Client` class must be resolved using the service container `app`.
+
+For example, if you are working with `hubspot/api-client` and would like to intercept the requests then you can create a custom `Client` provide it to the HubSpot `Factory` constructor.
+
 ```php
-$laravelPulseGuzzleRecorder = new MuhammadHuzaifa\LaravelPulseGuzzleRecorder();
-echo $laravelPulseGuzzleRecorder->echoPhrase('Hello, MuhammadHuzaifa!');
+$client = app(\GuzzleHttp\Client::class);
+$hubspot = \HubSpot\Factory::createWithAccessToken('access-token', $client);
 ```
 
 ## Testing

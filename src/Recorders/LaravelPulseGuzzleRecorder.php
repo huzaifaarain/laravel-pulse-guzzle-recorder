@@ -6,8 +6,8 @@ use Carbon\CarbonImmutable;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Utils;
-use Laravel\Pulse\Recorders\SlowOutgoingRequests;
 use Illuminate\Contracts\Foundation\Application;
+use Laravel\Pulse\Recorders\SlowOutgoingRequests;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -22,11 +22,10 @@ class LaravelPulseGuzzleRecorder
             $stack = new HandlerStack();
             $stack->setHandler(Utils::chooseHandler());
             $stack->push($this->middleware());
+
             return new Client(['handler' => $stack]);
         });
     }
-
-
 
     public function middleware(): callable
     {
@@ -37,9 +36,11 @@ class LaravelPulseGuzzleRecorder
             ) use ($handler) {
                 $startedAt = CarbonImmutable::now();
                 $promise = $handler($request, $options);
+
                 return $promise->then(
                     function (ResponseInterface $response) use ($request, $startedAt) {
                         app(SlowOutgoingRequests::class)->record($request, $startedAt->getTimestampMs());
+
                         return $response;
                     }
                 );

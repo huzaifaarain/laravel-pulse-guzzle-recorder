@@ -1,9 +1,9 @@
 # Laravel Pulse Guzzle Recorder
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/huzaifaarain/laravel-pulse-guzzle-recorder.svg?style=flat-square)](https://packagist.org/packages/huzaifaarain/laravel-pulse-guzzle-recorder)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/muhammadhuzaifa/laravel-pulse-guzzle-recorder.svg?style=flat-square)](https://packagist.org/packages/muhammadhuzaifa/laravel-pulse-guzzle-recorder)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/huzaifaarain/laravel-pulse-guzzle-recorder/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/huzaifaarain/laravel-pulse-guzzle-recorder/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/huzaifaarain/laravel-pulse-guzzle-recorder/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/huzaifaarain/laravel-pulse-guzzle-recorder/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/huzaifaarain/laravel-pulse-guzzle-recorder.svg?style=flat-square)](https://packagist.org/packages/huzaifaarain/laravel-pulse-guzzle-recorder)
+[![Total Downloads](https://img.shields.io/packagist/dt/muhammadhuzaifa/laravel-pulse-guzzle-recorder.svg?style=flat-square)](https://packagist.org/packages/muhammadhuzaifa/laravel-pulse-guzzle-recorder)
 
 Laravel Pulse Guzzle Recorder provide a custom recorder for intercepting http requests made via guzzlehttp/guzzle php library and log them into the Laravel Pulse Slow Outgoing Requests section.
 

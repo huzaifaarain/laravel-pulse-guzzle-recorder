@@ -1,6 +1,6 @@
 {
-    "name": "huzaifaarain/laravel-pulse-guzzle-recorder",
-    "description": "Pulse Guzzle Recorder provide a custom recorder for intercepting http requests made via guzzlehttp/guzzle php library. The package uses the on_stats request option for extracting the request/response data. The recorder intercept and log the request into the Laravel Pulse Slow Outgoing Requests.",
+    "name": "muhammadhuzaifa/laravel-pulse-guzzle-recorder",
+    "description": "Pulse Guzzle Recorder provide a custom recorder for intercepting http requests made via guzzlehttp/guzzle php library and add them into the pulse dashboard if the request is slow. The package uses the guzzle middleware for the data. The recorder intercept and log the request into the Laravel Pulse Slow Outgoing Requests.",
     "keywords": [
         "MuhammadHuzaifa",
         "laravel",
@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.8",
         "illuminate/contracts": "^10.0",
         "laravel/pulse": "^1.0@beta",
         "spatie/laravel-package-tools": "^1.14.0"
@@ -35,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MuhammadHuzaifa\\LaravelPulseGuzzleRecorder\\": "src/",
-            "MuhammadHuzaifa\\LaravelPulseGuzzleRecorder\\Database\\Factories\\": "database/factories/"
+            "MuhammadHuzaifa\\LaravelPulseGuzzleRecorder\\": "src/"
         }
     },
     "autoload-dev": {
@@ -75,9 +75,7 @@
             "providers": [
                 "MuhammadHuzaifa\\LaravelPulseGuzzleRecorder\\LaravelPulseGuzzleRecorderServiceProvider"
             ],
-            "aliases": {
-                "LaravelPulseGuzzleRecorder": "MuhammadHuzaifa\\LaravelPulseGuzzleRecorder\\Facades\\LaravelPulseGuzzleRecorder"
-            }
+            "aliases": {}
         }
     },
     "minimum-stability": "dev",

@@ -3,8 +3,8 @@
 namespace MuhammadHuzaifa\LaravelPulseGuzzleRecorder\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use MuhammadHuzaifa\LaravelPulseGuzzleRecorder\LaravelPulseGuzzleRecorderServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

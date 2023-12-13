@@ -7,12 +7,25 @@
 
 Laravel Pulse Guzzle Recorder provide a custom recorder for intercepting http requests made via guzzlehttp/guzzle php library and log them into the Laravel Pulse Slow Outgoing Requests section.
 
+`LaravelPulseGuzzleRecorder` under the hood uses `Laravel\Pulse\Recorders\SlowOutgoingRequests::record` functionality, so the configuration passed to the said recorder will also affect this recorder.
+
 ## Installation
 
 You can install the package via composer:
 
 ```bash
 composer require muhammadhuzaifa/laravel-pulse-guzzle-recorder
+```
+
+Add the recorder `LaravelPulseGuzzleRecorder` in the `config/pulse.php` file
+
+```php
+return [
+    'recorders' => [
+        // after all of the builtin recorders
+        \MuhammadHuzaifa\LaravelPulseGuzzleRecorder\Recorders\LaravelPulseGuzzleRecorder::class => true,
+    ]
+]
 ```
 
 ## Usage
@@ -35,14 +48,6 @@ composer test
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 

@@ -1,5 +1,7 @@
 # Laravel Pulse Guzzle Recorder
 
+![Laravel Pulse Guzzle](https://pulse.laravel.com/build/assets/dashboard-transparent-4f4f666c.png)
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/muhammadhuzaifa/laravel-pulse-guzzle-recorder.svg?style=flat-square)](https://packagist.org/packages/muhammadhuzaifa/laravel-pulse-guzzle-recorder)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/huzaifaarain/laravel-pulse-guzzle-recorder/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/huzaifaarain/laravel-pulse-guzzle-recorder/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/huzaifaarain/laravel-pulse-guzzle-recorder/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/huzaifaarain/laravel-pulse-guzzle-recorder/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
